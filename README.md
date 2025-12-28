@@ -1,26 +1,23 @@
-# devops-automation-lab
-Production-ready Kubernetes deployment with CI/CD, observability, and reliability best practices.
-# Kubernetes Production Setup
+# CI/CD Pipeline for Kubernetes
 
-## Overview
-This project demonstrates a production-ready Kubernetes environment designed
-for reliability, scalability, and observability.
-
-## Architecture
-- Kubernetes + Docker
-- HAProxy / Ingress
-- CI/CD (GitHub Actions / Jenkins)
-- Prometheus & Grafana
-- Centralized logging
-
-## Key Features
-- Automated deployments
-- Health checks and scaling
-- Monitoring and alerting
-- Incident-ready configuration
-
+This project demonstrates a production-style CI/CD pipeline that:
+	•	Builds Docker images
+	•	Pushes images to a container registry
+	•	Deploys applications to Kubernetes using rolling updates
+	•	Supports fast rollback on deployment failure
 ## Tech Stack
-Kubernetes, Docker, Linux, HAProxy, Prometheus, Grafana, Python, Bash
+	•	Jenkins (Declarative Pipeline)
+	•	Docker
+	•	Kubernetes
+	•	Python (Flask)
+
+## Pipeline Flow
+	1.	Code pushed to the repository
+	2.	Jenkins checks out the source code
+	3.	Jenkins builds and tags the Docker image
+	4.	Image is pushed to the container registry
+	5.	Kubernetes deployment is updated
+	6.	Rollout status is monitored, and rollback is available
 
 ## How to Run
 ```bash
